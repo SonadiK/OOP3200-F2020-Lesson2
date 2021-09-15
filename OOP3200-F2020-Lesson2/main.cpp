@@ -66,6 +66,9 @@ int main()
 	int inputY; // temporary input variable for y
 	// to store the distance between two points
 
+
+	double myDouble = ConsoleInput::ReadDouble();
+
 	try
 	{
 		// Input
