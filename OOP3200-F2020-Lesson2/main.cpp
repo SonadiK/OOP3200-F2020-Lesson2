@@ -5,8 +5,8 @@
  *
  *	@author		Sonadi Kannangara
  *	@studentID  100778336
- *	@date       15 September 2021
- *	Activity    ICE 1
+ *	@date       15 September 2021(Last modified)
+ *	Activity    ICE 1 - In Class Exercise 1
 */
 
 #include <iostream> 		// cin, cout
@@ -104,16 +104,16 @@ int main()
 		// Input
 
 		// Prompt the user for the coordinates
-		cout << "\nEnter coordinates of the destination point: " << endl;
+		std::cout << "\nEnter coordinates of the destination point: " << endl;
 		// prompt for, read, and store x coordinate:
-		cout << "X: ";
+		std::cout << "X: ";
 		inputX = ConsoleInput::ReadInteger();
 
 		//set x variable to destination object
 		destination.SetX(inputX);
 
 		// prompt for, read, and store y coordinate:
-		cout << "Y: ";
+		std::cout << "Y: ";
 		inputY = ConsoleInput::ReadInteger();
 
 		destination.SetY(inputY);
@@ -125,8 +125,8 @@ int main()
 
 		// Output 
 		// Show the points and the distance
-		cout << fixed << setprecision(3); // formatting
-		cout << "\nThe Distance between " << origin.ToString() << " and " << destination.ToString() << " is " << distance << "." << endl;
+		std::cout << fixed << setprecision(3); // formatting
+		std::cout << "\nThe Distance between " << origin.ToString() << " and " << destination.ToString() << " is " << distance << "." << endl;
 
 	}
 
@@ -136,7 +136,7 @@ int main()
 	}
 
 	// done.
-	cout << endl << endl;
+	std::cout << endl << endl;
 	return 0;
 } // end of main()
 
