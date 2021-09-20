@@ -11,69 +11,14 @@
 
 #include <iostream> 		// cin, cout
 #include <iomanip>			// fixed, setprecision()
-#include <sstream> 			// stringstream
-#include <cmath>			// sqrt()
-#include <limits>			// INT_MAX
 #include <stdexcept>		// out_of_range
 #include "MyConsoleInput.h" // ConsoleInput::ReadInteger()
 
+#include "CartesianPoint.h";
+
 using namespace std;
 
-// class declaration section
-class CartesianPoint
-{
-public:
 
-	/* Constructor: Used to initialize objects
-	*	- always the same name as the class
-	*	- never have a return type
-	*	- called automatically when an obj is instantiated
-	*	- should set values for each member variable
-	*/
-	CartesianPoint(int x = 1, int y = 1); //declaration
-
-	//Activity 2 - Accessors
-
-	/* Accessors: Used to query the state of the object
-	*	- never modifies the object
-	*	- should specify const at the end of the prototype/header
-	*/
-
-	// get x (return integers)(declaration part))
-	int GetX();
-	// get y
-	int GetY();
-
-
-	//Activity 3 - Mutator
-
-	/* Mutator(s): Used to change the state of the object
-	*	- should contain logic to ensure object remains in a valid state.
-	*	- typically sets a member variable to a parameter
-	*/
-
-	// set x (declaration)
-	void SetX(int x);
-	// set y, 
-	// set point (both x and y)
-	void SetY(int y);
-	// this function not return anything
-	void SetPoint(int x, int y);
-
-	// Declaring GetDistance and ToString method
-	// get the distance between this point and a second point
-	// I used GetDistance in here instead of GetInstanceTo because in DC connect pptx->activity instructions->GetDistance()
-	double GetDistance(CartesianPoint pointTo) const;
-
-	// convert the obj to a string	(this return a string)
-	string ToString() const;
-
-private:
-	// private data members for the dimensions of the point
-	int myX; // x-axis (horizontal) value
-	int myY;  // y-axis (vertical) value
-
-};
 
 // main() function
 int main()
@@ -141,78 +86,4 @@ int main()
 } // end of main()
 
 
-// Class definition section
 
-//constructor - cartesianPoint (this calls SetPoint [SetX and SetY])
-CartesianPoint::CartesianPoint(int x, int y)
-{
-	SetPoint(x, y);
-}
-
-//use set x and set y
-void CartesianPoint::SetPoint(int x, int y)
-{
-	SetX(x);
-	SetY(y);
-}
-
-//Defining SetX and SetY
-//Getting input from the function and modifying the data member.
-void CartesianPoint::SetX(int x)
-{
-	myX = x;
-}
-
-void CartesianPoint::SetY(int y)
-{
-	myY = y;
-}
-
-// Defining accessors (GetX and GetY)
-int CartesianPoint::GetX()
-{
-	return myX;
-}
-
-int CartesianPoint::GetY()
-{
-	return myY;
-}
-
-
-/* GetDistanceTo Method for CartesianPoint class
-*	Determines the distance between this point and a second point.
-*	@param	pointTo: CartesianPoint
-*	@return	the distance as a double
-*/
-
-double CartesianPoint::GetDistance(CartesianPoint pointTo) const
-{
-	// difference between x values
-	int xDelta = pointTo.myX - myX;
-
-	// difference between y values
-	int yDelta = pointTo.myY - myY;
-
-	// return the formula (based on Pythagorean theorem)
-	return sqrt((xDelta * xDelta) + (yDelta * yDelta));
-
-	/*double distance = sqrt((xDelta * xDelta) + (yDelta * yDelta));
-	return distance;*/
-
-}
-
-/* ToString Method for CartesianPoint class
-*	Converts the obj to a string.
-*	@return	the obj state as a string
-*/
-
-string CartesianPoint::ToString() const
-{
-	// declare a stringstream object
-	stringstream strOut;
-	// build the string
-	strOut << "(" << myX << ", " << myY << ")";
-	// return the string
-	return strOut.str();
-}
