@@ -16,6 +16,11 @@ public:
 	*	- should set values for each member variable
 	*/
 	CartesianPoint(int x = 1, int y = 1); //declaration
+	~CartesianPoint();
+
+	//Operator overloads
+	//point_to is the right side (right hand - left hand)
+	double operator-(const CartesianPoint& point_to) const;
 
 	//Activity 2 - Accessors
 
@@ -25,9 +30,9 @@ public:
 	*/
 
 	// get x (return integers)(declaration part))
-	int GetX();
+	int GetX() const;
 	// get y
-	int GetY();
+	int GetY() const;
 
 
 	//Activity 3 - Mutator
@@ -48,15 +53,15 @@ public:
 	// Declaring GetDistance and ToString method
 	// get the distance between this point and a second point
 	// I used GetDistance in here instead of GetInstanceTo because in DC connect pptx->activity instructions->GetDistance()
-	double GetDistance(CartesianPoint pointTo) const;
+	double GetDistance(const CartesianPoint& point_to) const;
 
 	// convert the obj to a string	(this return a string)
 	std::string ToString() const;
 
 private:
 	// private data members for the dimensions of the point
-	int myX; // x-axis (horizontal) value
-	int myY;  // y-axis (vertical) value
+	int myX{}; // x-axis (horizontal) value
+	int myY{};  // y-axis (vertical) value
 
 };
 
