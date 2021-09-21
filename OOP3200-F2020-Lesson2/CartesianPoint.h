@@ -18,9 +18,17 @@ public:
 	CartesianPoint(int x = 1, int y = 1); //declaration
 	~CartesianPoint();
 
+	//Copy Constructor
+	CartesianPoint(const CartesianPoint& point_two);
+
 	//Operator overloads
+
+	CartesianPoint operator+(const CartesianPoint& point_two) const;
+	
+	
 	//point_to is the right side (right hand - left hand)
 	double operator-(const CartesianPoint& point_to) const;
+	bool operator==(const CartesianPoint& other_point) const;
 
 	//Activity 2 - Accessors
 

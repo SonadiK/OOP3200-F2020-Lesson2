@@ -29,7 +29,7 @@ int main()
 	//CartesianPoint origin(0, 0);
 
 	//2nd Option
-	CartesianPoint origin = CartesianPoint(0, 0);
+	CartesianPoint origin = CartesianPoint(10, 20);
 	
 	// a point called 'destination'
 	//declaring object 
@@ -69,6 +69,11 @@ int main()
 		//(below line replace the above line)
 		distance = origin - destination;
 
+		std::cout << "origin is equal to destination?: " << std::to_string(origin == destination) << std::endl;
+
+		//Vector
+		CartesianPoint newPoint = origin + destination;
+		std::cout << "origin + destination = " << newPoint.ToString() << std::endl;
 
 		// Output 
 		// Show the points and the distance
