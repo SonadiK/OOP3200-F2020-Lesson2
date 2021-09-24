@@ -5,8 +5,11 @@
  *
  *	@author		Sonadi Kannangara
  *	@studentID  100778336
- *	@date       15 September 2021(Last modified)
+ *	@date       15 September 2021
+ *	Last modified date: 20 September 2021
  *	Activity    ICE 1 - In Class Exercise 1
+ *	Activity    ICE 2 - In Class Exercise 2
+ *	Last modified date: 24 September 2021
 */
 
 #include <iostream> 		// cin, cout
